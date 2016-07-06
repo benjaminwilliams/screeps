@@ -6,7 +6,7 @@ var popControl = {
         var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
         //console.log('Harvesters: ' + harvesters.length);
 
-        if(harvesters.length < config.targetCreeps.harvester) {
+        if(harvesters.length < config.targetCreeps.harvester && Game.spawns.Spawn1.energy > 200) {
             var newName = Game.spawns.Spawn1.createCreep([WORK,CARRY,MOVE], undefined, {role: 'harvester'});
             console.log('Spawning new harvester: ' + newName);
         }
@@ -15,7 +15,7 @@ var popControl = {
         var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
         //console.log('upgraders: ' + upgraders.length);
 
-        if(upgraders.length < config.targetCreeps.upgrader) {
+        if(upgraders.length < config.targetCreeps.upgrader && Game.spawns.Spawn1.energy > 200) {
             var newName = Game.spawns.Spawn1.createCreep([WORK,CARRY,MOVE], undefined, {role: 'upgrader'});
             console.log('Spawning new upgrader: ' + newName);
         }
@@ -24,7 +24,7 @@ var popControl = {
         var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
         //console.log('builder: ' + builders.length);
 
-        if(builders.length < config.targetCreeps.builder) {
+        if(builders.length < config.targetCreeps.builder && Game.spawns.Spawn1.energy > 200) {
             var newName = Game.spawns.Spawn1.createCreep([WORK,CARRY,MOVE], undefined, {role: 'builder'});
             console.log('Spawning new builder: ' + newName);
         }
