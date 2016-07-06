@@ -1,13 +1,18 @@
-var taskCreate = require('task.create');
+var config = require('config');
+
+
 var roleHarvester = require('role.harvester');
 var roleBuilder = require('role.builder');
-var taskEdit = require('task.edit');
 var roleUpgrader = require('role.upgrader');
+
+var taskEdit = require('task.edit');
+var taskCreate = require('task.create');
+var taskPopControl = require('task.popControl');
 
 //taskCreate.builder('steve');
 //taskCreate.harvester('glen');
 
-//taskEdit.changeRole('steve', 'upgrader');
+//taskEdit.changeRole('Jayce', 'harvester');
 
 module.exports.loop = function () {
 
@@ -20,18 +25,15 @@ module.exports.loop = function () {
         }
     }
 
-    //var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
-    //console.log('Harvesters: ' + harvesters.length);
-    //
-    //if(harvesters.length < 2) {
-    //    var newName = Game.spawns.Spawn1.createCreep([WORK,CARRY,MOVE], undefined, {role: 'harvester'});
-    //    console.log('Spawning new harvester: ' + newName);
-    //}
+    taskPopControl.harvester();
+    taskPopControl.upgrader();
+    taskPopControl.builder();
+
+
 
 
 
     for(var name in Game.creeps) {
-        console.log(name);
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {
             roleHarvester.run(creep);

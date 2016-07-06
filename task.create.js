@@ -13,7 +13,7 @@ var taskCreate = {
             { role: 'builder' } 
         );
     },
-     harvester : function(name){
+    harvester : function(name){
         Game.spawns.Spawn1.createCreep( [WORK, CARRY, MOVE], name,
             { role: 'harvester' } 
         );
