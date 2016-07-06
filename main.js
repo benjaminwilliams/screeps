@@ -12,7 +12,7 @@ var taskPopControl = require('task.popControl');
 //taskCreate.builder('steve');
 //taskCreate.harvester('glen');
 
-//taskEdit.changeRole('Jayce', 'harvester');
+taskEdit.changeRole('Nathaniel', 'harvester');
 
 module.exports.loop = function () {
 
@@ -46,4 +46,22 @@ module.exports.loop = function () {
         }
     }
     
+};
+
+test = function(){
+    console.log('rkjkljj');
+};
+
+info = {
+    listCreeps: function () {
+        var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
+        var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
+        var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
+
+
+        console.log('Harvesters: ' + harvesters.length + " | target: " + config.targetCreeps.harvester);
+        console.log('upgraders: ' + upgraders.length + " | target: " + config.targetCreeps.upgrader);
+        console.log('builders: ' + builders.length + " | target: " + config.targetCreeps.builder);
+
+    }
 };
