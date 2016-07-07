@@ -1,6 +1,5 @@
 var config = require('config');
 
-
 var roleHarvester = require('role.harvester');
 var roleBuilder = require('role.builder');
 var roleUpgrader = require('role.upgrader');
@@ -12,7 +11,7 @@ var taskPopControl = require('task.popControl');
 //taskCreate.builder('steve');
 //taskCreate.harvester('glen');
 
-taskEdit.changeRole('Nathaniel', 'harvester');
+//taskEdit.changeRole('Nathasaassniel', 'harvester');
 
 module.exports.loop = function () {
 
@@ -25,11 +24,7 @@ module.exports.loop = function () {
         }
     }
 
-    taskPopControl.harvester();
-    taskPopControl.upgrader();
-    taskPopControl.builder();
-
-
+    taskPopControl.run();
 
 
 

@@ -2,11 +2,21 @@
 var taskEdit = {
     rename : function(oldName, newName){
        var creep = Game.creeps[oldName];
-       creep.name = newName;
+        if(creep.name){
+            creep.name = newName;
+        }
+        else {
+            console.log('error, no one named: '+ name)
+        }
     },
     changeRole: function(name, role){
-        Game.creeps[name].memory = {
-            role: role
+        if(Game.creeps[name]){
+            Game.creeps[name].memory = {
+                role: role
+            }
+        }
+        else {
+            console.log('error, no one named: '+ name)
         }
     }
 };

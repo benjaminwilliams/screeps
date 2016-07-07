@@ -1,8 +1,8 @@
 var config = {
     targetCreeps: {
-        harvester: 2,
-        builder: 1,
-        upgrader: 10
+        harvester: 5,
+        builder: 7,
+        upgrader: 13
     }
 };
 
