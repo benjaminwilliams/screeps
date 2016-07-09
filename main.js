@@ -58,11 +58,13 @@ info = {
         var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
         var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
         var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
+        var repairers = _.filter(Game.creeps, (creep) => creep.memory.role == 'repairer');
 
 
         console.log('Harvesters: ' + harvesters.length + " | target: " + config.targetCreeps.harvester);
         console.log('upgraders: ' + upgraders.length + " | target: " + config.targetCreeps.upgrader);
         console.log('builders: ' + builders.length + " | target: " + config.targetCreeps.builder);
+        console.log('repairers: ' + repairers.length + " | target: " + config.targetCreeps.repairer);
 
     }
 };

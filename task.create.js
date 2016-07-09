@@ -46,7 +46,7 @@ var taskCreate = {
     repairer: function () {
         var currentTime = new Date();
         var name = "Repairer_" + currentTime.getHours() + ":" + currentTime.getMinutes() + ":" + currentTime.getSeconds();
-        // current cost: 250
+        // current cost: 200
         var newName = Game.spawns.Spawn1.createCreep([WORK,CARRY,MOVE], name, {role: 'repairer'});
         console.log('Spawning new upgrader: ' + newName);
 
