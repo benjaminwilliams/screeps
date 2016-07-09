@@ -1,4 +1,12 @@
 
+//var roleBuilder = {
+//
+//};
+//
+//roleBuilder.prototype.level1 = function(){
+//
+//};
+
 var roleBuilder = {
     /** @param {Creep} creep **/
     run: function(creep) {
