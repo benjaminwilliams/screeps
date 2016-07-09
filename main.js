@@ -3,6 +3,7 @@ var config = require('config');
 var roleHarvester = require('role.harvester');
 var roleBuilder = require('role.builder');
 var roleUpgrader = require('role.upgrader');
+var roleRepairer = require('role.repairer');
 
 var taskEdit = require('task.edit');
 var taskCreate = require('task.create');
@@ -29,6 +30,7 @@ module.exports.loop = function () {
 
 
 
+
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {
@@ -39,6 +41,9 @@ module.exports.loop = function () {
         }
         if(creep.memory.role == 'upgrader') {
             roleUpgrader.run(creep);
+        }
+        if(creep.memory.role == 'repairer') {
+            roleRepairer.run(creep);
         }
     }
     

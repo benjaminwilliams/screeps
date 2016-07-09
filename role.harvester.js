@@ -13,7 +13,16 @@ var roleHarvester = {
                 creep.moveTo(Game.spawns.Spawn1);
             }
         }
+        else{
+            let extension = creep.pos.findClosest(FIND_STRUCTURE, { filter: function (s) {
+                return s.structureType == STRUCTURE_EXTENSION
+            }});
+            if(creep.transfer(extension, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                creep.moveTo(extension);
+            }
+        }
 	}
 };
 
 module.exports = roleHarvester;
+
