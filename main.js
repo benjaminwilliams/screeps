@@ -8,6 +8,7 @@ var roleRepairer = require('role.repairer');
 var taskEdit = require('task.edit');
 var taskCreate = require('task.create');
 var taskPopControl = require('task.popControl');
+var taskTower = require('task.tower');
 
 //taskCreate.builder('steve');
 //taskCreate.upgrader2();
@@ -27,9 +28,8 @@ module.exports.loop = function () {
     }
 
     taskPopControl.run();
-
-
-
+    taskTower.defend();
+    taskTower.repair();
 
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
